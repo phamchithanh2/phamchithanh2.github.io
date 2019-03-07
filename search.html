@@ -1,0 +1,44 @@
+---
+layout: default
+title: Tìm kiếm
+js: ["lunr.min.js", "search.js"]
+css: ["page.css","search.css"]
+---
+
+<div id="page-info">
+  <h2><i class="material-icons font-inherit mat-icon">find_in_page</i> {{page.title}}</h2>
+</div>
+
+
+<div class="row">
+	
+	<form action="{{ site.baseurl }}/search" method="get">
+		<input type="search" name="q" {% if include.add_id %}id="search-input"{% endif %} placeholder="gõ từ khóa tìm kiếm..." autofocus>
+		<input type="submit" value="Search" style="display: none;">
+	</form>
+
+
+	<p style="opacity: 0.6;" ><span id="search-process">Đang tải</span> kết quả <span id="search-query-container" style="display: none;">cho từ khóa "<strong id="search-query"></strong>"</span></p>
+	<ul id="search-results"></ul>
+
+	<script>
+		window.data = {
+			{% for post in site.posts %}
+				{% if post.title %}
+					{% unless post.excluded_in_search %}
+						{% if added %},{% endif %}
+						{% assign added = false %}
+						"{{ post.url | slugify }}": {
+							"id": "{{ post.url | slugify }}",
+							"title": "{{ post.title | xml_escape }}",
+							"categories": "{{ post.categories | join: ", " | xml_escape }}",
+							"url": " {{ post.url | xml_escape }}",
+							"content": {{ post.content | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
+						}
+						{% assign added = true %}
+					{% endunless %}
+				{% endif %}
+			{% endfor %}
+		};
+	</script>
+</div>

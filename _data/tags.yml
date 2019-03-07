@@ -1,0 +1,95 @@
+- the: calculus
+  slug: calculus
+  name: Calculus (phương pháp tính)
+
+- the: lịch sử toán học
+  slug: history-of-maths
+  name: Lịch sử toán học
+
+- the: quen lại toán
+  slug: quen-lai-toan
+  name: Quen lại Toán
+
+- the: học tiếng pháp
+  slug: french
+  name: Tự học tiếng Pháp
+
+- the: c++
+  slug: cpp
+  name: Lập trình C++
+
+- the: linux
+  slug: linux
+  name: Linux
+
+- the: programming
+  slug: programming
+  name: Lập trình nói chung
+
+- the: python
+  slug: python
+  name: Lập trình Python
+
+- the: matlab
+  slug: matlab
+  name: Lập trình Matlab
+
+- the: jekyll
+  slug: jekyll
+  name: Jekyll
+
+- the: không phân loại
+  slug: others
+  name: Không phân loại
+
+- the: toán sơ cấp
+  slug: toan-so-cap
+  name: Toán sơ cấp
+
+- the: toán cao cấp
+  slug: toan-cao-cap
+  name: Toán cao cấp
+
+- the: hiểu toán học
+  slug: hieu-toan-hoc
+  name: Hiểu toán học
+
+- the: finite element method
+  slug: fem
+  name: Finite Element Method
+
+- the: giải tích số
+  slug: giai-tich-so
+  name: Giải tích số
+
+- the: thiết kế web
+  slug: web-design
+  name: Thiết kế web
+
+- the: khoa học máy tính
+  slug: computer-science
+  name: Khoa học máy tính
+
+- the: latex
+  slug: latex
+  name: Soạn thảo LaTeX
+
+- the: git
+  slug: git
+  name: Git
+
+- the: github
+  slug: github
+  name: Github
+
+- the: lập trình web
+  slug: web-development
+  name: Lập trình web
+
+- the: animation
+  slug: animation
+  name: Animation
+
+- the: khám phá
+  slug: kham-pha
+  name: Khám phá

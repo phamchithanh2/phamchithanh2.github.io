@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=vietnamese" rel="stylesheet">
+    <meta name="google-site-verification" content="8zqeFQNuNAWS7ye6oN69hdEeYC_RsDyAlhht79xtAQo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.bgimage %}
+    <meta property="og:image" content="{{site.baseurl}}/bgimages/{{ page.bgimage }}" />
+    {% else %}
+      <meta property="og:image" content="{{site.baseurl}}/assets/res/banner.png" />
+    {% endif %}
+    
+    <title>
+      {% if page.title %}
+        {{ page.title | escape }} | Tôi Tự Học by Math2IT
+      {% else %}
+        {{ site.title | escape }} | Cùng bạn tự học
+      {% endif %}
+    </title>
+
+    <!-- math support -->
+    {% if page.maths %}
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+    {% endif %}
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/assets/res/favicon.png">
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/materialize.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
+    <!-- Thi's custom css -->
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/thi.css">
+    {% for css in layout.css %}
+    {% if css contains "//" %}
+    <link rel="stylesheet" href="{{css}}">
+    {% else %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
+    {% endif %}
+    {% endfor %}
+    {% for css in page.css %}
+    {% if css contains "//" %}
+    <link rel="stylesheet" href="{{css}}">
+    {% else %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/{{css}}">
+    {% endif %}
+    {% endfor %}
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{site.baseurl}}/feed.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{site.baseurl}}/sitemap.xml">
+    {% seo title=false %}
+  </head>
+  <body>
+    <header>
+      <nav class="top-nav teal">
+        <div class="nav-wrapper">
+          <div class="container">
+            <a class="page-title font-title" href="{{site.baseurl}}/">Tôi Tự Học</a>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav fixed">
+        <li>
+          <div class="userView thi-userView">
+            <div class="background"></div>
+              <a href="{{site.github_profile}}">
+                <img style="display:inherit;" class="circle z-depth-2" src="{{site.baseurl}}/assets/res/user.png">
+              </a>
+            <span style="font-size: larger;" class="white-text name">{{site.user}}</span>
+            <span class="white-text email"><a style="color: #bdbdbd;" href="http://math2it.com">math2it.com</a></span>
+          </div>
+        </li>
+        <li style="padding: 10px;">
+          <form action="{{ site.baseurl }}/search" method="get">
+            <input class="search-sidebar" type="search" name="q" {% if include.add_id %}id="search-input"{% endif %} placeholder="tìm gì đó?" autofocus>
+            <input type="submit" value="Search" style="display: none;">
+          </form>
+        </li>
+        <li><a class="waves-effect" href="{{site.baseurl}}/"><i class="material-icons">home</i>Trang chủ</a></li>
+        <li><a class="waves-effect" href="{{site.baseurl}}/projects"><i class="material-icons">favorite</i>Chủ đề</a></li>
+        <li><a class="waves-effect" href="{{site.baseurl}}/categories"><i class="material-icons">sort</i>Lưu trữ</a></li>
+        <li><a class="waves-effect" href="{{site.baseurl}}/tags"><i class="material-icons">loyalty</i>Thẻ</a></li>
+        <!-- <li><a class="waves-effect" href="{{site.baseurl}}/feed.xml" target="_blank"><i class="material-icons">rss_feed</i>RSS</a></li> -->
+        <li><div class="divider"></div></li>
+        <li><a class="waves-effect" href="{{site.baseurl}}/about"><i class="material-icons">info</i>Giới thiệu</a></li>
+        <li><a class="waves-effect" href="{{site.baseurl}}/contact"><i class="material-icons">perm_contact_calendar</i>Liên hệ</a></li>
+        <li><a class="waves-effect" href="{{site.baseurl}}/newsletter"><i class="material-icons">email</i>Newsletter</a></li>
+        <li><a class="waves-effect" href="{{site.baseurl}}/FAQs"><i class="material-icons">help</i>FAQs</a></li>
+      </ul>
+    </header>
+    <main>

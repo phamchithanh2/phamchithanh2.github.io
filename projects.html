@@ -1,0 +1,32 @@
+---
+layout: default
+title: "Các chủ đề tự học"
+css: ["projects.css","page.css"]
+js: ["https://cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js", "projects.js"]
+---
+
+<div id="page-info">
+  <h2><i class="material-icons font-inherit mat-icon">favorite</i> {{page.title}}</h2>
+</div>
+
+<p>
+Các bạn vui lòng dùng chức năng tìm kiếm của trình duyệt (<code>Ctrl</code>+<code>F</code>) để tìm đến chủ đề bạn cần quan tâm.
+</p>
+
+<div class="row">
+	{% for stag in site.tags | sort %}
+		{% for dtag in site.data.tags %}
+	      	{% if dtag.the == stag[0] %}
+				<div class="col s12 m6 l3">
+				  <div class="card hoverable">
+				    <div class="card-image waves-effect waves-block waves-light geopattern activator" data-pattern-id="{{dtag.slug}}">
+				      <a style="line-height: initial;" class="card-title center-align valign-wrapper text-cap" href="/{{dtag.slug}}">
+				      	{{ dtag.name }}
+				      </a>
+				    </div>
+				  </div>
+				</div>
+			{% endif %}
+	    {% endfor %}
+	{% endfor %}
+</div>

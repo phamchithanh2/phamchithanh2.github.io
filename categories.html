@@ -1,0 +1,55 @@
+---
+layout: default
+title: "Toàn bộ bài đăng"
+css: ["categories.css","page.css"]
+---
+
+<div id="page-info">
+  <h2><i class="material-icons font-inherit mat-icon">sort</i> {{page.title}}</h2>
+</div>
+
+<div class="row">
+	<div class="col s12 cat-div">
+	  <div class="cat-list">
+	    {% for cat in site.categories %}
+	    	{% for catDat in site.data.categories %}
+		      {% if catDat.slug == cat[0] %}
+		        {% assign catego = catDat %}
+		      {% endif %}
+		    {% endfor %}
+		    {% if catego %}
+			    {% capture test %}{{cat[0] | slice: 0}}{% endcapture %}
+			    {% capture testup %}{{cat[0] | slice: 0 | upcase}}{% endcapture %}
+			    <a class="cat-chip" href="#{{cat[0] | slugify}}{% if test == testup %}_cap{% endif %}"><div class="chip z-depth-1">{{ catego.name }}</div></a>
+		    {% endif %}
+	    {% endfor %}
+	  </div>
+	  <div class="divider"></div>
+	  <div class="cat-index">
+	    {% for cat in site.categories %}
+		    {% for catDat in site.data.categories %}
+		      {% if catDat.slug == cat[0] %}
+		        {% assign catego = catDat %}
+		      {% endif %}
+		    {% endfor %}
+		    {% if catego %}
+			    {% capture test %}{{cat[0] | slice: 0}}{% endcapture %}
+			    {% capture testup %}{{cat[0] | slice: 0 | upcase}}{% endcapture %}
+			    <h3 class="cat-tag" class="text-cap" id="{{cat[0] | slugify}}{% if test == testup %}_cap{% endif %}">{{ catego.name }}</h3>
+			    <div class="thi-columns">
+				    <ul class="cat-post">
+				      {% for post in cat[1] %}
+				      <a class="post-title" href="{{site.baseurl}}{{post.url}}">
+				        <li>
+				          {{post.title}}
+				          <small class="post-date">{{post.date | date_to_string}}</small>
+				        </li>
+				      </a>
+				      {% endfor %}
+				    </ul>
+				</div>
+		    {% endif %}
+	    {% endfor %}
+	  </div>
+	</div>
+</div>

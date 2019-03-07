@@ -1,0 +1,94 @@
+- slug: cpp
+  name: Lập trình C++
+  color: lightyellow
+  txt: darkgoldenrod
+
+- slug: linux
+  name: Linux
+  color: lightyellow
+  txt: darkgoldenrod
+
+- slug: programming
+  name: Lập trình nói chung
+  color: lightyellow
+  txt: darkgoldenrod
+
+- slug: python
+  name: Lập trình Python
+  color: lightyellow
+  txt: darkgoldenrod
+
+- slug: matlab
+  name: Lập trình Matlab
+  color: lightyellow
+  txt: darkgoldenrod
+
+- slug: liquid-jekyll
+  name: Liquid và Jekyll
+  color: lightyellow
+  txt: darkgoldenrod
+
+- slug: others
+  name: Không phân loại
+  color: "#eceff1"
+  txt: darkslategrey
+
+- slug: toan-so-cap
+  name: Toán sơ cấp
+  color: lightcyan
+  txt: darkcyan
+
+- slug: quen-lai-toan
+  name: Quen lại Toán
+  color: lightcyan
+  txt: darkcyan
+
+- slug: toan-cao-cap
+  name: Toán cao cấp
+  color: lightcyan
+  txt: darkcyan
+
+- slug: fem
+  name: Finite Element Method
+  color: lightcyan
+  txt: darkcyan
+
+- slug: web-design
+  name: Thiết kế web
+  color: lightyellow
+  txt: darkgoldenrod
+
+- slug: computer-science
+  name: Khoa học máy tính
+  color: lightyellow
+  txt: darkgoldenrod
+
+- slug: latex
+  name: Soạn thảo LaTeX
+  color: lightyellow
+  txt: darkgoldenrod
+
+- slug: git-github
+  name: Git và Github
+  color: lightyellow
+  txt: darkgoldenrod
+
+- slug: web-development
+  name: Lập trình web
+  color: lightyellow
+  txt: darkgoldenrod
+
+- slug: animation
+  name: Animation
+  color: lightyellow
+  txt: darkgoldenrod
+
+- slug: kham-pha
+  name: Khám phá
+  color: "#f0ffdf"
+  txt: darkolivegreen
+
+- slug: hoc-ngoai-ngu
+  name: Học ngoại ngữ
+  color: "#ffebeb"
+  txt: "#b60000"

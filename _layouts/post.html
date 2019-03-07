@@ -1,0 +1,90 @@
+---
+layout: default
+css: ["post.css","step.css","more-info.css"]
+js: ["post.js"]
+---
+
+<style type="text/css">
+.bg-img{
+  background: url('{{ page.cover }}');
+  padding: 100px 0;
+  text-align: center;
+  margin: 0 -50px;
+  color: white;
+}
+.bg-img h3{
+  color: white!important;
+}
+.bg-img span{
+  color: white!important;
+}
+.bg-img span span{
+  color: white!important;
+}
+.darken{
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('{{ page.cover }}');
+  }
+.divider-img{
+  height: 0;
+}
+</style>
+
+{% if page.cover %}
+  {% assign class-bg-img="bg-img darken" %}
+  {% assign class-divider="divider-img" %}
+{% else %}
+  {% assign class-divider="divider" %}
+{% endif %}
+
+<!-- <div class="{{class-bg-img}}" id="post-info"> -->
+<div id="post-info">
+  <h3>{{page.title}}</h3>
+  <span>
+    Đăng lúc
+    <span style="display: initial;" class="cat-class">{{page.date | date: "%d/%m/%Y"}}</span>,
+    trong chuyên mục
+    {% for cat in page.categories %}
+    {% for catDat in site.data.categories %}
+      {% if catDat.slug == cat %}
+        {% assign catego = catDat %}
+      {% endif %}
+    {% endfor %}
+    {% if catego %}
+      <a class="cat-class cat-commas" href="{{site.baseurl}}/{{cat | slugify}}">{{ catego.name }}</a>
+    {% endif %}
+    {% endfor %}
+  </span>
+</div>
+<!-- <div class="{{class-divider}}"></div> -->
+<div class="divider"></div>
+<div class="row thi-post">
+  <div class="col s12">
+    {{ content }}
+  </div>
+</div>
+
+<div>
+<span>
+  {% for tag in page.tags %}
+  {% capture test %}{{tag | slice: 0}}{% endcapture %}
+  {% capture testup %}{{tag | slice: 0 | upcase}}{% endcapture %}
+  <a href="{{site.baseurl}}/tags#{{tag | slugify}}{% if test == testup %}_cap{% endif %}"><div class="chip">{{tag}}</div></a>
+  {% endfor %}
+</span>
+</div>
+
+{% unless page.unrelated %}
+  {% include related-posts.html %}
+{% endunless %}
+
+<div style="margin-top: 30px;">
+  {% include newsletter.html %}
+</div>
+
+{% if site.disqus_shortname and page.comments %}
+  {% include disqus.html %}
+{% endif %}
