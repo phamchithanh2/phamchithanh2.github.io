@@ -16,8 +16,8 @@
 title: Tôi Tự Học by Math2IT
 description: Cùng bạn tự học.
 baseurl: ""
-url: "http://localhost:4000"
-# url: "http://toituhoc.dinhanhthi.com"
+url: "https://phamchithanh2.github.io/"
+# url:"http://toituhoc.dinhanhthi.com"
 # enforce_ssl: toituhoc.dinhanhthi.com 
 # permalink: /:year/:month/:day/:title
 # permalink: /:categories/:title
